@@ -1,53 +1,171 @@
-# Getting Started with Create React App
+# IEEE Paper Generation Agent Ecosystem
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A comprehensive AI-powered frontend application for generating IEEE-compliant research papers, managing citations, and assisting with academic research workflows.
 
-## Available Scripts
+## 🚀 Features
 
-In the project directory, you can run:
+- **AI-Powered Paper Generation**: Generate complete IEEE-format research papers with AI assistance
+- **Research Assistant**: Search and discover relevant papers and citations
+- **Template Library**: Pre-built IEEE conference and journal templates
+- **Citation Management**: Generate citations in multiple formats (IEEE, APA, MLA, Chicago)
+- **Paper Management**: Track and organize your research papers and publications
+- **Analytics Dashboard**: Monitor your research progress and publication metrics
+- **Responsive Design**: Modern, mobile-friendly interface built with React and Tailwind CSS
 
-### `npm start`
+## 🛠️ Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Frontend**: React 19.x
+- **Styling**: Tailwind CSS 3.x
+- **Build Tool**: Create React App
+- **Icons**: Heroicons (SVG)
+- **State Management**: React Hooks
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📋 Prerequisites
 
-### `npm test`
+Before running this project, make sure you have the following installed:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Node.js** (version 18.x or higher)
+- **npm** (comes with Node.js)
 
-### `npm run build`
+## 🚀 Quick Start
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 1. Clone the Repository
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+git clone https://github.com/PriscillajospinG/frontend-research-paper-agent.git
+cd frontend-research-paper-agent
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 2. Install Dependencies
 
-### `npm run eject`
+```bash
+npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 3. Start the Development Server
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+The application will open in your browser at [http://localhost:3000](http://localhost:3000)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 📁 Project Structure
 
-## Learn More
+```
+src/
+├── components/
+│   ├── Header.js              # Main navigation header
+│   ├── Sidebar.js             # Navigation sidebar
+│   ├── MainContent.js         # Content area router
+│   ├── Footer.js              # Footer component
+│   └── sections/
+│       ├── Dashboard.js       # Main dashboard
+│       ├── GeneratePaper.js   # Paper generation wizard
+│       ├── Templates.js       # IEEE template library
+│       ├── ResearchAssistant.js # Research and citation tools
+│       ├── MyPapers.js        # Paper management
+│       ├── Citations.js       # Citation generator
+│       ├── Analytics.js       # Progress analytics
+│       └── Settings.js        # User preferences
+├── App.js                     # Main application component
+├── index.js                   # Application entry point
+└── index.css                  # Global styles with Tailwind
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🎯 Available Features
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 1. Dashboard
+- Overview of research activity
+- Quick action buttons
+- Recent papers summary
+- Statistics and metrics
 
-### Code Splitting
+### 2. Generate Paper
+- Step-by-step paper generation wizard
+- Topic selection and keywords
+- Automatic content generation
+- IEEE format compliance
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### 3. Research Assistant
+- Literature search functionality
+- Citation discovery
+- Research tools and resources
+- Reference management
+
+### 4. Templates
+- IEEE Conference Paper template
+- IEEE Journal Article template  
+- IEEE Letter template
+- IEEE Survey Paper template
+
+### 5. My Papers
+- Paper library management
+- Status tracking (Draft, In Review, Published)
+- Citation and download metrics
+
+## 🎨 UI/UX Features
+
+- **Responsive Design**: Works on desktop, tablet, and mobile
+- **Dark/Light Theme**: Professional academic interface
+- **Interactive Elements**: Hover effects, transitions, and animations
+- **Accessibility**: Screen reader friendly, keyboard navigation
+- **Modern Layout**: Clean, professional design suitable for academic use
+
+## 🔧 Available Scripts
+
+### Development
+```bash
+npm start          # Start development server
+npm test           # Run test suite
+npm run build      # Build for production
+npm run eject      # Eject from Create React App (irreversible)
+```
+
+### Production Build
+```bash
+npm run build
+```
+Creates a `build` folder with optimized production files.
+
+## 🚀 Deployment
+
+The app can be deployed to various platforms:
+
+- **Netlify**: Drag and drop the `build` folder
+- **Vercel**: Connect your GitHub repository
+- **GitHub Pages**: Use `npm run build` and deploy the build folder
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🆘 Support
+
+If you encounter any issues or have questions:
+
+1. Check the [Issues](https://github.com/PriscillajospinG/frontend-research-paper-agent/issues) page
+2. Create a new issue with detailed description
+3. Contact the development team
+
+## 🙏 Acknowledgments
+
+- IEEE for the formatting standards
+- React team for the excellent framework
+- Tailwind CSS for the utility-first CSS framework
+- Heroicons for the beautiful icon set
+
+---
+
+Built with ❤️ for the academic research community
 
 ### Analyzing the Bundle Size
 
