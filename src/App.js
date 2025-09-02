@@ -9,10 +9,10 @@ function App() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 flex flex-col">
       <Header sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
       
-      <div className="flex">
+      <div className="flex flex-1">
         <Sidebar 
           activeSection={activeSection} 
           setActiveSection={setActiveSection}

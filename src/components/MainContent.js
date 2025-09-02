@@ -33,7 +33,7 @@ const MainContent = ({ activeSection, sidebarOpen }) => {
   };
 
   return (
-    <main className={`flex-1 transition-all duration-300 ease-in-out ${sidebarOpen ? 'lg:ml-0' : 'lg:ml-0'}`}>
+    <main className="flex-1 transition-all duration-300 ease-in-out">
       <div className="py-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {renderSection()}
