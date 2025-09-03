@@ -1,12 +1,6 @@
 import React from 'react';
 import Dashboard from './sections/Dashboard';
-import GeneratePaper from './sections/GeneratePaper';
-import Templates from './sections/Templates';
-import ResearchAssistant from './sections/ResearchAssistant';
-import MyPapers from './sections/MyPapers';
-import Citations from './sections/Citations';
-import Analytics from './sections/Analytics';
-import Settings from './sections/Settings';
+import PaperGenerator from './PaperGenerator';
 
 const MainContent = ({ activeSection, sidebarOpen }) => {
   const renderSection = () => {
@@ -14,19 +8,7 @@ const MainContent = ({ activeSection, sidebarOpen }) => {
       case 'dashboard':
         return <Dashboard />;
       case 'generate':
-        return <GeneratePaper />;
-      case 'templates':
-        return <Templates />;
-      case 'research':
-        return <ResearchAssistant />;
-      case 'papers':
-        return <MyPapers />;
-      case 'citations':
-        return <Citations />;
-      case 'analytics':
-        return <Analytics />;
-      case 'settings':
-        return <Settings />;
+        return <PaperGenerator />;
       default:
         return <Dashboard />;
     }

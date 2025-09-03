@@ -23,8 +23,8 @@ const Header = ({ sidebarOpen, setSidebarOpen }) => {
                 </svg>
               </div>
               <div className="ml-3">
-                <h1 className="text-2xl font-bold text-gray-900">IEEE Paper Generator</h1>
-                <p className="text-sm text-gray-600">AI-Powered Research Assistant</p>
+                <h1 className="text-2xl font-bold text-gray-900">Research Paper Agent</h1>
+                <p className="text-sm text-gray-600">Autonomous AI-Powered Paper Generation</p>
               </div>
             </div>
           </div>

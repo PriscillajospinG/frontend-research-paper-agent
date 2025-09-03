@@ -133,7 +133,7 @@ const AgentMonitor = ({ executionId, onComplete, onError }) => {
       }
       clearTimeout(reconnectTimeoutRef.current);
     };
-  }, [executionId]);
+  }, [executionId, connectWebSocket]);
 
   const getStatusColor = (agentStatus) => {
     switch (agentStatus) {
