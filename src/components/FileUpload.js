@@ -2,7 +2,7 @@
  * FileUpload Component - Handles draft and format template uploads
  * Matches backend endpoints: /upload-draft and /upload-format
  */
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useMemo } from 'react';
 import apiService from '../services/api';
 
 const FileUpload = ({ type = 'draft', onUploadSuccess, onUploadError }) => {
@@ -12,12 +12,12 @@ const FileUpload = ({ type = 'draft', onUploadSuccess, onUploadError }) => {
   const [uploadedFile, setUploadedFile] = useState(null);
 
   // File type restrictions based on backend
-  const allowedTypes = {
+  const allowedTypes = useMemo(() => ({
     draft: ['pdf', 'docx', 'txt'],
     format: ['json', 'docx']
-  };
+  }), []);
 
-  const maxFileSize = 50 * 1024 * 1024; // 50MB
+  const maxFileSize = useMemo(() => 50 * 1024 * 1024, []); // 50MB
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const validateFile = useCallback((file) => {
