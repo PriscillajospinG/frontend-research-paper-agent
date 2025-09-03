@@ -19,7 +19,8 @@ const FileUpload = ({ type = 'draft', onUploadSuccess, onUploadError }) => {
 
   const maxFileSize = 50 * 1024 * 1024; // 50MB
 
-  const validateFile = (file) => {
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const validateFile = useCallback((file) => {
     const fileExtension = file.name.split('.').pop().toLowerCase();
     const allowedExtensions = allowedTypes[type];
 
@@ -32,9 +33,10 @@ const FileUpload = ({ type = 'draft', onUploadSuccess, onUploadError }) => {
     }
 
     return true;
-  };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [type, allowedTypes, maxFileSize]);
 
-  const handleFiles = async (files) => {
+  const handleFiles = useCallback(async (files) => {
     if (files.length === 0) return;
 
     const file = files[0];
@@ -70,7 +72,7 @@ const FileUpload = ({ type = 'draft', onUploadSuccess, onUploadError }) => {
     } finally {
       setUploading(false);
     }
-  };
+  }, [type, onUploadSuccess, onUploadError, validateFile]);
 
   const handleDrag = useCallback((e) => {
     e.preventDefault();
@@ -90,7 +92,7 @@ const FileUpload = ({ type = 'draft', onUploadSuccess, onUploadError }) => {
     if (e.dataTransfer.files && e.dataTransfer.files[0]) {
       handleFiles(Array.from(e.dataTransfer.files));
     }
-  }, []);
+  }, [handleFiles]);
 
   const handleChange = (e) => {
     e.preventDefault();

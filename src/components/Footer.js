@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="flex flex-col sm:flex-row justify-between items-center space-y-2 sm:space-y-0">
           <div className="flex items-center space-x-4">
             <p className="text-sm text-gray-500">
-              © 2025 IEEE Paper Generator. Powered by AI.
+              © 2025 IEEE Paper Generator. Powered by battle-ax.
             </p>
           </div>
           

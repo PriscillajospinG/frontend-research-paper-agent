@@ -2,7 +2,7 @@
  * AgentMonitor Component - Real-time monitoring of agent processing
  * Connects to WebSocket endpoint for live updates
  */
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import apiService from '../services/api';
 
 const AgentMonitor = ({ executionId, onComplete, onError }) => {
@@ -51,7 +51,23 @@ const AgentMonitor = ({ executionId, onComplete, onError }) => {
     }
   };
 
-  const connectWebSocket = () => {
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const handleReconnect = useCallback(() => {
+    if (reconnectAttempts >= maxReconnectAttempts) {
+      setConnectionStatus('failed');
+      return;
+    }
+
+    clearTimeout(reconnectTimeoutRef.current);
+    reconnectTimeoutRef.current = setTimeout(() => {
+      setReconnectAttempts(prev => prev + 1);
+      connectWebSocket();
+    }, Math.min(1000 * Math.pow(2, reconnectAttempts), 10000)); // Exponential backoff
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [reconnectAttempts, maxReconnectAttempts]);
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const connectWebSocket = useCallback(() => {
     if (!executionId) return;
 
     try {
@@ -107,20 +123,8 @@ const AgentMonitor = ({ executionId, onComplete, onError }) => {
       setConnectionStatus('error');
       handleReconnect();
     }
-  };
-
-  const handleReconnect = () => {
-    if (reconnectAttempts >= maxReconnectAttempts) {
-      setConnectionStatus('failed');
-      return;
-    }
-
-    clearTimeout(reconnectTimeoutRef.current);
-    reconnectTimeoutRef.current = setTimeout(() => {
-      setReconnectAttempts(prev => prev + 1);
-      connectWebSocket();
-    }, Math.min(1000 * Math.pow(2, reconnectAttempts), 10000)); // Exponential backoff
-  };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [executionId, onComplete, onError, reconnectAttempts, maxReconnectAttempts]);
 
   useEffect(() => {
     if (executionId) {
